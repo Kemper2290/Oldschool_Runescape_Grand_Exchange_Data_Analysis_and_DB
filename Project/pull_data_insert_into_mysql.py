@@ -6,15 +6,18 @@ headers = {
     "User-Agent": "OSRS-Price-Tracker/1.0"
 }
 
+#returns item list
 mapping = requests.get(
     "https://prices.runescape.wiki/api/v1/osrs/mapping",
     headers=headers
 ).json()
 
+#returns current GE prices
 prices = requests.get(
     "https://prices.runescape.wiki/api/v1/osrs/latest",
     headers=headers
-).json()["data"]
+).json()["data"] # data is the only key
+
 
 
 conn = mysql.connector.connect(

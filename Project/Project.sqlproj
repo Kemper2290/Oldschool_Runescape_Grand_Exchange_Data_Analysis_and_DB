@@ -7,9 +7,13 @@
         <ModelCollation>1033, CI</ModelCollation>
     </PropertyGroup>
     <ItemGroup>
+      <Content Include="godsword_analysis\godsword_analysis.py" />
+      <Content Include="godsword_analysis\pull_data_godswords.py" />
       <Content Include="hello.py" />
       <Content Include="OSRS_Create_DB.py" />
       <Content Include="pull_data.py" />
       <Content Include="pull_data_insert_into_mysql.py" />
+      <Content Include="search_exact_name.py" />
+      <Content Include="Search_for_items_like.py" />
     </ItemGroup>
 </Project>

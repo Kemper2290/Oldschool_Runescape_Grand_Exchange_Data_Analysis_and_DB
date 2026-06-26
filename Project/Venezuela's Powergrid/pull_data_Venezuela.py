@@ -14,7 +14,7 @@ cursor = conn.cursor()
 
 cursor.execute(
     """
-    Create Table if not exists godswords_30day
+    Create Table if not exists Venezuela_bots
     (
         item_id int,
         item_name varchar(255),
@@ -34,38 +34,34 @@ conn.commit()
 
 cursor.execute(
     """
-    with cte as (
-        select *
-        from items
-        where item_name like "%godsword" or item_name like "%hilt" or item_name = "Godsword blade"
-    )
     select item_id,item_name
-    from cte
-    where item_name regexp 'Saradomin|Zamorak|Bandos|Armadyl' or item_name like "%Godsword Blade%"
-
-    """
+    from items
+    where item_name in ('Saradomin Brew(4)','Super restore(4)', 'Super Combat Potion(4)',
+                        'ranging potion(4)','Prayer Potion(4)','Shark','Lobster',
+                        'AnglerFish','Blood rune','Soul rune','Cosmic rune',
+                        "Zulrah's scales")"""
 )
 
-godsword_result = cursor.fetchall() #returns a list of tuples as type list
+result = cursor.fetchall() #returns a list of tuples as type list
 
-print("list of godsword_result")
-for row in godsword_result:
+print("list of result")
+for row in result:
     print(row)
 
-print(godsword_result)
+print(result)
 
 items = {}
-for item_id,item_name in godsword_result:
+for item_id,item_name in result:
     items[item_id] = item_name
 
-print("dictionary of godsword_result")
+print("dictionary of result")
 print(items)
 print("\n")
 
 # ------------------
 # API header (which is required)
 # ------------------
-headers = {"User_Agent": "OSRS-Price-Tracker"}
+headers = {"User-Agent": "OSRS-Price-Tracker"}
 
 
 
@@ -82,7 +78,7 @@ for item_id,item_name in items.items():
 
     url = ( "https://prices.runescape.wiki/api/v1/osrs/timeseries")
 
-    params = {"timestep": "6h",
+    params = {"timestep": "24h",
               "id" : item_id}
 
 
@@ -140,7 +136,11 @@ for item_id,item_name in items.items():
     conn.commit()
     print(f"Done {item_name}")
 
-
+cursor.execute("""
+    alter table venezuela_bots
+    modify column timestamp DATE
+""")
+conn.commit()
 
 
 cursor.close

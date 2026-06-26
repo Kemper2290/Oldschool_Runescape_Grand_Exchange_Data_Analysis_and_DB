@@ -11,9 +11,12 @@
       <Content Include="godsword_analysis\pull_data_godswords.py" />
       <Content Include="hello.py" />
       <Content Include="OSRS_Create_DB.py" />
+      <Content Include="practice_tutorial.ipynb" />
       <Content Include="pull_data.py" />
       <Content Include="pull_data_insert_into_mysql.py" />
       <Content Include="search_exact_name.py" />
       <Content Include="Search_for_items_like.py" />
+      <Content Include="Venezuela's Powergrid\Analysis.md" />
+      <Content Include="Venezuela's Powergrid\pull_data_Venezuela.py" />
     </ItemGroup>
 </Project>

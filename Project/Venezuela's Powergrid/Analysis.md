@@ -39,3 +39,5 @@ Some common items are
 -Soul rune\
 -Cosmic rune\
 -Zulrah Scales\
+
+data is tracked through runelite

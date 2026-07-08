@@ -7,6 +7,7 @@
         <ModelCollation>1033, CI</ModelCollation>
     </PropertyGroup>
     <ItemGroup>
+      <Content Include="godsword_analysis\.env" />
       <Content Include="godsword_analysis\godsword_analysis.py" />
       <Content Include="godsword_analysis\pull_data_godswords.py" />
       <Content Include="hello.py" />
@@ -16,7 +17,13 @@
       <Content Include="pull_data_insert_into_mysql.py" />
       <Content Include="search_exact_name.py" />
       <Content Include="Search_for_items_like.py" />
+      <Content Include="Venezuela's Powergrid\.env" />
       <Content Include="Venezuela's Powergrid\Analysis.md" />
+      <Content Include="Venezuela's Powergrid\Analysis.py" />
       <Content Include="Venezuela's Powergrid\pull_data_Venezuela.py" />
+      <Content Include="Venezuela's Powergrid\Pull_player_count.py" />
+      <Content Include="Venezuela's Powergrid\README_Analysis.md" />
+      <Content Include="Venezuela's Powergrid\test_pull_player_api.py" />
+      <Content Include="Venezuela's Powergrid\venezuela_bots_csv" />
     </ItemGroup>
 </Project>

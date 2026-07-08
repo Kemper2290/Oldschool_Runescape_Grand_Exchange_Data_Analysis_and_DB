@@ -2,12 +2,16 @@
 import mysql.connector
 import requests
 from datetime import datetime,timezone
-
+from dotenv import load_dotenv
+import os
+load_dotenv()
+print(os.getenv("DB_HOST"))
 conn = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password = "Dubclub2464!",
-    database = "osrs_ge"
+    host=os.getenv("DB_HOST"),
+    user=os.getenv("DB_USER"),
+    password=os.getenv("DB_PASSWORD"),
+    database=os.getenv("DB_NAME")
+
 )
 
 cursor = conn.cursor()
@@ -38,7 +42,8 @@ cursor.execute(
     from items
     where item_name in ('Saradomin Brew(4)','Super restore(4)', 'Super Combat Potion(4)',
                         'ranging potion(4)','Prayer Potion(4)','Shark','Lobster',
-                        'AnglerFish','Blood rune','Soul rune','Cosmic rune',
+                        'AnglerFish','Blood rune','Soul rune','Cosmic rune','Raw lobster',
+                        'Raw shark','Raw anglerfish',
                         "Zulrah's scales")"""
 )
 

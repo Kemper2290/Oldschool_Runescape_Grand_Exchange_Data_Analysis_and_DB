@@ -7,23 +7,39 @@
         <ModelCollation>1033, CI</ModelCollation>
     </PropertyGroup>
     <ItemGroup>
+      <Content Include=".env" />
+      <Content Include="create osrs_ge_DB_and_item_table.py" />
+      <Content Include="export_tables.py" />
+      <Content Include="godswords_91day.csv" />
       <Content Include="godsword_analysis\.env" />
       <Content Include="godsword_analysis\godsword_analysis.py" />
       <Content Include="godsword_analysis\pull_data_godswords.py" />
-      <Content Include="hello.py" />
-      <Content Include="OSRS_Create_DB.py" />
-      <Content Include="practice_tutorial.ipynb" />
-      <Content Include="pull_data.py" />
-      <Content Include="pull_data_insert_into_mysql.py" />
-      <Content Include="search_exact_name.py" />
-      <Content Include="Search_for_items_like.py" />
+      <Content Include="items.csv" />
+      <Content Include="Oldschool_Runescape_Market_analysis.md" />
+      <Content Include="player_count.csv" />
+      <Content Include="pull_data_items.py" />
+      <Content Include="test_scipts\hello.py" />
+      <Content Include="test_scipts\practice_tutorial.ipynb" />
+      <Content Include="test_scipts\pull_data.py" />
+      <Content Include="test_scipts\search_exact_name.py" />
+      <Content Include="test_scipts\Search_for_items_like.py" />
       <Content Include="Venezuela's Powergrid\.env" />
       <Content Include="Venezuela's Powergrid\Analysis.md" />
       <Content Include="Venezuela's Powergrid\Analysis.py" />
+      <Content Include="Venezuela's Powergrid\boxplot for event window.png" />
+      <Content Include="Venezuela's Powergrid\Buy and Sell Price of Cooked Food.png" />
+      <Content Include="Venezuela's Powergrid\Buy and Sell Volume of Cooked Food.png" />
+      <Content Include="Venezuela's Powergrid\Buy and Sell Volume of Raw Food.png" />
+      <Content Include="Venezuela's Powergrid\img.png" />
+      <Content Include="Venezuela's Powergrid\img_1.png" />
+      <Content Include="Venezuela's Powergrid\img_2.png" />
+      <Content Include="Venezuela's Powergrid\img_3.png" />
+      <Content Include="Venezuela's Powergrid\img_4.png" />
+      <Content Include="Venezuela's Powergrid\Mean Buy Volume Before and After January 3, 2026.png" />
       <Content Include="Venezuela's Powergrid\pull_data_Venezuela.py" />
       <Content Include="Venezuela's Powergrid\Pull_player_count.py" />
       <Content Include="Venezuela's Powergrid\README_Analysis.md" />
       <Content Include="Venezuela's Powergrid\test_pull_player_api.py" />
-      <Content Include="Venezuela's Powergrid\venezuela_bots_csv" />
+      <Content Include="venezuela_bots.csv" />
     </ItemGroup>
 </Project>

@@ -30,11 +30,24 @@ query = """
 
 fulldf = pd.read_sql(query,conn)
 #fulldf.to_csv('venezuela_bots_csv',index=False)
+fulldf['spread'] = fulldf['avg_buy_price']-fulldf['avg_sell_price']
+
 
 fulldf.head()
+print(fulldf.head().to_markdown(index=False))
+
 fulldf.info()
+data_summary = fulldf.dtypes.to_frame("Data Type")
+print(data_summary.to_markdown())
+
+fulldf.describe()
+print(fulldf.describe().to_markdown(index=True))
+
 
 fulldf.groupby(['item_name'])['item_id'].count()
+fulldf.groupby(['item_name'])['item_id'].describe()
+print(fulldf.groupby(['item_name'])['item_id'].describe().to_markdown(index=True))
+
 
 fulldf['item_name'].unique()
 
@@ -65,7 +78,9 @@ print(len(days))
 lobsterdf = fulldf.loc[fulldf['item_name']=='Lobster'].reset_index()
 lobsterdf['days'] = days
 lobsterdf.head()
+print(lobsterdf.head().to_markdown(index=False))
 lobsterdf.tail()
+print(lobsterdf.tail().to_markdown(index=False))
 
 raw_lobsterdf = fulldf.loc[fulldf['item_name']=='Raw lobster'].reset_index()
 raw_lobsterdf['days'] = days
@@ -101,18 +116,22 @@ raw_anglerfishdf.tail()
 #plotting data for buy and sell volume for food
 #---------------------------------------
 
-ax=lobsterdf.plot('timestamp','sell_volume',label='lobster-SellVol',color='orange',xlim=('2025-12-15','2026-01-31'))
-lobsterdf.plot('timestamp','buy_volume',label='lobster-BuyVol',color ='peru',ax=ax)
+ax=lobsterdf.plot('timestamp','sell_volume',label='Lobster-SellVol',color='orange',xlim=('2025-12-15','2026-01-31'),linestyle='--')
+lobsterdf.plot('timestamp','buy_volume',label='Lobster-BuyVol',color ='peru',ax=ax,linestyle='-')
 
-sharkdf.plot('timestamp','sell_volume',label = 'shark-SellVol',color='brown',ax=ax)
-sharkdf.plot('timestamp','buy_volume',label='shark-BuyVol',color = 'saddlebrown',ax=ax)
+sharkdf.plot('timestamp','sell_volume',label = 'Shark-SellVol',color='brown',ax=ax,linestyle='--')
+sharkdf.plot('timestamp','buy_volume',label='Shark-BuyVol',color = 'saddlebrown',ax=ax,linestyle='-')
 
-anglerfishdf.plot('timestamp','sell_volume',label= 'anglerfish-SellVol',color='green',ax=ax)
-anglerfishdf.plot('timestamp','buy_volume',label='anglerfish-BuyVol',color = 'lightgreen',ax=ax)
+anglerfishdf.plot('timestamp','sell_volume',label= 'Anglerfish-SellVol',color='green',ax=ax,linestyle='--')
+anglerfishdf.plot('timestamp','buy_volume',label='Anglerfish-BuyVol',color = 'lightgreen',ax=ax,linestyle='-')
 
 ax.xaxis.set_major_locator(mdates.DayLocator()) # Label every day
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%m-%d')) # Format as Dec 01, Dec 02, or 12-01,12-02 ...
 plt.xticks(rotation=45)
+plt.xlabel('Date')
+plt.ylabel('Count')
+plt.title('Buy and Sell Volume of Cooked Food')
+
 
 #----------------------------------------
 # Plotting data for buy volume for food
@@ -132,52 +151,71 @@ plt.xticks(rotation=45)
 #plotting data for avg buy and sell price for food
 #----------------------------------------
 
-ax=lobsterdf.plot('timestamp','avg_sell_price',label='lobster-SellPrice',color='orange',xlim=('2025-12-15','2026-01-31'))
-lobsterdf.plot('timestamp','avg_buy_price',label='lobster-BuyPrice',color ='peru',ax=ax)
+ax=lobsterdf.plot('timestamp','avg_sell_price',label='lobster-SellPrice',color='orange',xlim=('2025-12-15','2026-01-31'),linestyle='--')
+lobsterdf.plot('timestamp','avg_buy_price',label='lobster-BuyPrice',color ='peru',ax=ax,linestyle='-')
 
-sharkdf.plot('timestamp','avg_sell_price',label = 'shark-SellPrice',color='sandybrown',ax=ax)
-sharkdf.plot('timestamp','avg_buy_price',label='shark-BuyPrice',color = 'saddlebrown',ax=ax)
+sharkdf.plot('timestamp','avg_sell_price',label = 'shark-SellPrice',color='sandybrown',ax=ax,linestyle='--')
+sharkdf.plot('timestamp','avg_buy_price',label='shark-BuyPrice',color = 'saddlebrown',ax=ax,linestyle='-')
+ax=sharkdf.plot('timestamp','avg_sell_price',label = 'shark-SellPrice',color='sandybrown',xlim=('2025-12-15','2026-01-31'),linestyle='--')
+sharkdf.plot('timestamp','avg_buy_price',label='shark-BuyPrice',color = 'saddlebrown',ax=ax,linestyle='-')
 
-anglerfishdf.plot('timestamp','avg_sell_price',label= 'anglerfish-SellPrice',color='green',ax=ax)
-anglerfishdf.plot('timestamp','avg_buy_price',label='anglerfish-BuyPrice',color = 'lightgreen',ax=ax)
+anglerfishdf.plot('timestamp','avg_sell_price',label= 'anglerfish-SellPrice',color='green',ax=ax,linestyle='--')
+anglerfishdf.plot('timestamp','avg_buy_price',label='anglerfish-BuyPrice',color = 'lightgreen',ax=ax,linestyle='-')
+ax=anglerfishdf.plot('timestamp','avg_sell_price',label= 'anglerfish-SellPrice',color='green',xlim=('2025-12-15','2026-01-31'),linestyle='--')
+anglerfishdf.plot('timestamp','avg_buy_price',label='anglerfish-BuyPrice',color = 'lightgreen',ax=ax,linestyle='-')
 
 ax.xaxis.set_major_locator(mdates.DayLocator()) # Label every day
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%m-%d')) # Format as Dec 01, Dec 02, or 12-01,12-02 ...
 plt.xticks(rotation=45)
+plt.xticks(rotation=45)
+plt.xlabel('Date')
+plt.ylabel('Count')
+plt.title('Buy and Sell Price of Cooked Food')
+
+
 
 #--------------------------------------------------------
 #plotting data for avg buy and sell volume of raw food
 #--------------------------------------------------------
 
-ax=raw_lobsterdf.plot('timestamp','sell_volume',label='raw-lobster-SellVol',color='orange',xlim=('2025-12-15','2026-01-31'))
-raw_lobsterdf.plot('timestamp','buy_volume',label='raw-lobster-BuyVol',color ='peru',ax=ax)
+ax=raw_lobsterdf.plot('timestamp','sell_volume',label='raw-lobster-SellVol',color='orange',xlim=('2025-12-15','2026-01-31'),linestyle='--')
+raw_lobsterdf.plot('timestamp','buy_volume',label='raw-lobster-BuyVol',color ='peru',ax=ax,linestyle='-')
 
-raw_sharkdf.plot('timestamp','sell_volume',label = 'raw-shark-SellVol',color='sandybrown',ax=ax)
-raw_sharkdf.plot('timestamp','buy_volume',label='raw-shark-BuyVol',color = 'saddlebrown',ax=ax)
+raw_sharkdf.plot('timestamp','sell_volume',label = 'raw-shark-SellVol',color='brown',ax=ax,linestyle='--')
+raw_sharkdf.plot('timestamp','buy_volume',label='raw-shark-BuyVol',color = 'saddlebrown',ax=ax,linestyle='-')
 
-raw_anglerfishdf.plot('timestamp','sell_volume',label= 'raw-anglerfish-SellVol',color='green',ax=ax)
-raw_anglerfishdf.plot('timestamp','buy_volume',label='raw-anglerfish-BuyVol',color = 'lightgreen',ax=ax)
+raw_anglerfishdf.plot('timestamp','sell_volume',label= 'raw-anglerfish-SellVol',color='green',ax=ax,linestyle='--')
+raw_anglerfishdf.plot('timestamp','buy_volume',label='raw-anglerfish-BuyVol',color = 'lightgreen',ax=ax,linestyle='-')
 
 ax.xaxis.set_major_locator(mdates.DayLocator()) # Label every day
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%m-%d')) # Format as Dec 01, Dec 02, or 12-01,12-02 ...
 plt.xticks(rotation=45)
+plt.xlabel('Date')
+plt.ylabel('Count')
+plt.title('Buy and Sell Volume of Raw Food')
 
 #-----------------------------------------
 #plotting data for avg buy and sell price for raw food
 #----------------------------------------
 
-ax=raw_lobsterdf.plot('timestamp','avg_sell_price',label='raw-lobster-SellPrice',color='orange',xlim=('2025-12-15','2026-01-31'))
-raw_lobsterdf.plot('timestamp','avg_buy_price',label='raw-lobster-BuyPrice',color ='peru',ax=ax)
+ax=raw_lobsterdf.plot('timestamp','avg_sell_price',label='raw-lobster-SellPrice',color='orange',xlim=('2025-12-15','2026-01-31'),linestyle='--')
+raw_lobsterdf.plot('timestamp','avg_buy_price',label='raw-lobster-BuyPrice',color ='peru',ax=ax,linestyle='-')
 
-raw_sharkdf.plot('timestamp','avg_sell_price',label = 'raw-shark-SellPrice',color='sandybrown',ax=ax)
-raw_sharkdf.plot('timestamp','avg_buy_price',label='raw-shark-BuyPrice',color = 'saddlebrown',ax=ax)
+raw_sharkdf.plot('timestamp','avg_sell_price',label = 'raw-shark-SellPrice',color='sandybrown',ax=ax,linestyle='--')
+raw_sharkdf.plot('timestamp','avg_buy_price',label='raw-shark-BuyPrice',color = 'saddlebrown',ax=ax,linestyle='-')
 
-raw_anglerfishdf.plot('timestamp','avg_sell_price',label= 'raw-anglerfish-SellPrice',color='green',ax=ax)
-raw_anglerfishdf.plot('timestamp','avg_buy_price',label='raw-anglerfish-BuyPrice',color = 'lightgreen',ax=ax)
+raw_anglerfishdf.plot('timestamp','avg_sell_price',label= 'raw-anglerfish-SellPrice',color='green',ax=ax,linestyle='--')
+raw_anglerfishdf.plot('timestamp','avg_buy_price',label='raw-anglerfish-BuyPrice',color = 'lightgreen',ax=ax,linestyle='-')
 
 ax.xaxis.set_major_locator(mdates.DayLocator()) # Label every day
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%m-%d')) # Format as Dec 01, Dec 02, or 12-01,12-02 ...
 plt.xticks(rotation=45)
+plt.xlabel('Date')
+plt.ylabel('Count')
+plt.title('Buy and Sell Price of Raw Food')
+
+
+
 
 #---------------------------------------------------------------
 # Plotting data for buy and sell volume for cook and raw food
@@ -213,6 +251,7 @@ plt.xticks(rotation=45)
 
 food_df = pd.concat([lobsterdf,sharkdf,anglerfishdf],axis=0,ignore_index=True)
 food_df['timestamp'] = pd.to_datetime(food_df['timestamp'])
+
 event_date = pd.Timestamp("2026-01-03")
 event_window = food_df[
     (food_df['timestamp'] >= event_date - pd.Timedelta(days=7)) &
@@ -220,10 +259,14 @@ event_window = food_df[
 
 event_window['period'] = 'After'
 event_window.loc[event_window['timestamp'] < event_date,'period'] = 'Before'
+#event_window["spread"] = event_window["avg_buy_price"] - event_window["avg_sell_price"]
+
 
 food_df.head()
 food_df.tail()
+
 event_window.head()
+print(event_window.head().to_markdown(index=False))
 event_window.tail()
 print(event_window[['item_name','timestamp','period']])
 
@@ -243,9 +286,13 @@ summary = (
     )
     .round(0)
 )
-
+summary=summary.reset_index()
 print(summary)
+print(summary.to_markdown())
 
+print(summary.to_markdown(index=False))
+
+# Boxplot
 fig,ax = plt.subplots(figsize=(8,6))
 event_window.boxplot(
     column='buy_volume',
@@ -262,6 +309,7 @@ plt.xticks(rotation=45)
 
 
 # Plotting the interaction means for the three types of food before and after the period.
+
 means = (
     event_window
     .groupby(['period', 'item_name'])['buy_volume']
@@ -269,21 +317,33 @@ means = (
     .unstack()
 )
 
-means.plot(marker='o') #since lines are roughly parrel and in scale than
-                        # the anova is likely to show non significant interaction
+# Put Before first
+means = means.reindex(['Before', 'After'])
+means.head()
+print(means)
+
+ax = means.plot(
+    marker='o',
+    linewidth=2
+)
+
+print(ax.get_xticks())
+print(ax.get_xticklabels())
+
+ax.set_xticks([0, 1])
+ax.set_xticklabels(['Before', 'After'])
 
 plt.title("Mean Buy Volume Before and After January 3, 2026")
 plt.xlabel("Period")
 plt.ylabel("Mean Buy Volume")
 plt.grid(True)
-plt.legend(title="Item")
 plt.show()
 
-
+#ordinary least squares model that fits a linear regressio model
 model = ols('buy_volume ~ C(period) * C(item_name)',data=event_window).fit()
 
 twoway_anova = sm.stats.anova_lm(model,type=2)
-print(twoway_anova)
+print(twoway_anova.to_markdown())
 
 # This means that there is a difference between in buy_volume between two volumes but since we only have two
 #   categorical variables we dont need to run a post hoc test for this variable. However, since the p-value
@@ -318,6 +378,7 @@ print(residuals.shape)
 W_stat,W_p = scipy.stats.shapiro(residuals)
 print(W_stat,W_p)
 
+#qq_plot
 scipy.stats.probplot(residuals,dist="norm",plot=plt)
 plt.show()
 

@@ -247,7 +247,8 @@ plt.ylabel('Count')
 plt.title('Buy and Sell Volume of Cooked Food')
 ```
 
-![img.png](img.png)
+
+![img](Buy and Sell Volume of Cooked Food.png)
 
 From the above graph, two things are clear. First, its obvious that the buy volumes are almost always greater than the sell volume. Intrinsically this makes sense, players use food for all sorts of content and likely consume more than they use. However, it should be noted that this data only shows that food is bought more than its sold, food could still be held in banks indicating vast stores. Secondly, there is a specific spike in both buy and sell volume at on january 3rd and sixth. There provides some concrete evidence that we are seeing shifts in the market that could possibly be related to the rolling blackouts in venezuela following the bombing of their powergrid.
 
@@ -272,7 +273,8 @@ plt.ylabel('Count')
 plt.title('Buy and Sell Volume of Raw Food')
 ```
 
-![img_2.png](img_2.png)
+
+![img](Buy and Sell Volume of Raw Food.png)
 
 Interesting enough we notice that when the raw food is analyzed, we see similar spikes at the same dates mentioned. However, here we see that the sell volume is greater than the buy volume for raw shark and anglerfish. It's possible that people were aware noticing a change in market value for these items and were selling off in mass. It's worth mentioning here that the change in buy and sell volumes is still within the same magnitude so that change is not to extreme.
 
@@ -298,7 +300,8 @@ plt.title('Buy and Sell Price of Cooked Food')
 
 ```
 
-![img_3.png](img_3.png)
+
+![img](Buy and Sell Price of Cooked Food.png)
 
 Now that we have confirmed our data in our dataframe and analyzed trends in the data, we can move forward with our statistical analysis. We begin by performing a two way anova on our cooked food buy volume by comparing the data a week before jan 3rd and a week after(including jan 3rd). As such our independent variables are the period (before vs after) and food type. Our dependent variable ,in this case, is buy volume since we are interested in that change. Our anova will tell us two main effects from our dependent variables and if there is an interaction between these two main effects. Our first main effect tell us if there is a difference in average buy volume for all items combined before and after jan 3rd. Our second effect tells us if there is a difference in sharks, lobsters, and anglerfish buy volumes regardless of the period it takes place. Finally the interaction between the two effects tells us if jan 3rd has an effect on which item your looking at. For example, did sharks buy volume increase more than lobsters. In general, the interaction tells us whether the change before and after jan 3rd is different for each item.
 
@@ -377,7 +380,8 @@ plt.xticks(rotation=45)
 
 ```
 
-![img_1.png](img_1.png)
+
+![img](boxplot for event window.png)
 
 The boxplot above shows the various food groups time period vs the buy volume. The green line represents the median for each group and the whiskers are 1.5 the interquartile range from the edge of the box. As in all box plots, outliers are located outside of the whiskers and are up to the analyst to interpret. In this study, we are choosing to retain the outliers due to the small dataset and that likihood that these outliers are revelant to our research question.
 
@@ -416,8 +420,9 @@ plt.grid(True)
 plt.show()
 ```
 
-![img_4.png](img_4.png)
 
+
+![img](Mean Buy Volume Before and After January 3 2026.png)
 
 Finally, we can now analyze our data using a two way anova. First we fit our data to a linear regression model using ordinary least squares (OLS) method that the statsmodels library can use for an ANOVA. Than we use our OLS model for our linear regression as shown below.
 
@@ -441,21 +446,3 @@ print(twoway_anova)
 
 
 
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>

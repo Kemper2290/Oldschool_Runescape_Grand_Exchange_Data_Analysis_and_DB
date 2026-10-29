@@ -15,22 +15,29 @@
 
 ## Project Description
 
-On January 3, 2026, the United States detained the Venezuelan president for extradition to the United States on drug conspiracy charges. As part of this operation, the United States reportedly targeted portions of Venezuela's power grid in an attempt to limit the country's response. Disabling the power grid for as little as 36 hours had significant consequences for the country's population. The disruption resulted in health emergencies, lost work, and reduced leisure time. Because of the widespread power outages, many people also lost access to internet services, reducing the number of people able to play online video games.
+On January 3, 2026, the United States detained the Venezuelan president for extradition to the United States on drug conspiracy charges. As part of this operation, the United States reportedly targeted portions of Venezuela's power grid in an attempt to limit the country's response. Disruptions to the power grid lasting as little as 36 hours can have significant consequences for the population, including health emergencies, lost work, and reduced leisure time. Widespread power outages can also disrupt internet access, reducing the number of people able to play online video games.
 
-One of the most popular video games of all time is RuneScape. The franchise has existed in some form since 2001. After several controversial updates that divided the community, RuneScape rereleased a nostalgic version of the game called Old School RuneScape (OSRS). OSRS places a strong emphasis on community feedback when determining the direction of future development while preserving the gameplay that originally made RuneScape popular. As a result, the game has experienced continued growth, with online player counts consistently exceeding 100,000 concurrent players. Jagex, the game's developer, has continued expanding the RuneScape universe and has been valued at over $1.1 billion, with both sales and player counts continuing to increase.
+One of the most popular video game franchises of all time is RuneScape, which has existed in some form since 2001. Following several controversial updates that divided the community, Jagex rereleased a nostalgic version of the game called Old School RuneScape (OSRS). OSRS places a strong emphasis on community feedback when determining the direction of future development while preserving the gameplay that originally made RuneScape popular. As a result, the game has continued to grow, with concurrent player counts consistently exceeding 100,000. Jagex, the game's developer, has continued expanding the RuneScape universe and has been valued at over $1.1 billion, with both sales and player counts continuing to increase.
 
-Today, OSRS is played all over the world by a diverse player base spanning many countries and languages. Unfortunately, like many massively multiplayer online (MMO) games, OSRS struggles with cheaters, exploiters, and bots. Due to RuneScape's unique server-side architecture, cheating is generally less prevalent than in many other online games. Instead, the primary issue is bots—scripted player accounts that automatically perform in-game tasks without human interaction. Because OSRS has relatively low hardware requirements, malicious users can run dozens or even hundreds of bot accounts simultaneously on a single computer. Regardless of the tasks they perform, these bots typically sell the resources they gather for real-world money or sell them on the Grand Exchange (GE) for in-game profit.
+Today, OSRS is played around the world by a diverse player base spanning many countries and languages. Unfortunately, like many massively multiplayer online (MMO) games, OSRS struggles with cheaters, exploiters, and bots. Due to RuneScape's unique server-side architecture, cheating is generally less prevalent than in many other online games. Instead, one of the primary issues is botting: the use of scripted player accounts that automatically perform in-game tasks without human interaction. Because OSRS has relatively low hardware requirements, malicious users can run dozens or even hundreds of bot accounts simultaneously on a single computer. Regardless of the tasks they perform, these bots typically generate real-world income by selling the resources they gather for real-world money or selling them on the Grand Exchange (GE) for in-game profit.
 
-In OSRS, the Grand Exchange is the primary marketplace where players trade items for in-game currency. Conceptually, it is similar to a stock exchange, where players speculate on item values and attempt to profit from future price changes. The Grand Exchange is essential to the game's economy, allowing players to efficiently buy and sell resources needed for gameplay. It is also a nostalgic location that many long-time players remember fondly. On a small scale, a few dozen or even a few hundred bots would have little effect on a global economy that processes millions of item trades every hour. However, the profitability of botting has led to the creation of industrial-scale bot farms consisting of thousands of automated accounts. These bots generate real-world income, contribute to inflation, manipulate item prices, steal accounts, and generally reduce the quality of the game. Prosecuting the organizations responsible for operating these bot networks remains difficult because legal systems have been slow to adapt to this type of activity.
+In OSRS, the Grand Exchange is the primary marketplace where players trade items for in-game currency. Conceptually, it is similar to a stock exchange, where players speculate on item values and attempt to profit from future price changes. The Grand Exchange is essential to the game's economy, allowing players to efficiently buy and sell the resources needed for gameplay. It is also a nostalgic location that many longtime players remember fondly. On a small scale, a few dozen or even a few hundred bots would have little effect on a global economy that processes millions of item trades every hour. However, the profitability of botting has led to the creation of industrial-scale bot farms consisting of thousands of automated accounts. These bots generate real-world income, contribute to inflation, manipulate item prices, steal accounts, and generally reduce the quality of the game. Prosecuting the organizations responsible for operating these bot networks remains difficult because legal systems have been slow to adapt to this type of activity.
 
-Within the OSRS community, there is a long-running belief that many of these bots are operated by individuals in Venezuela. Due to the country's economic conditions and the exchange value of OSRS gold relative to the U.S. dollar, botting is often perceived as a viable source of income. Additionally, several well-known RuneScape content creators have produced videos interviewing or exposing individuals involved in botting operations. Whenever large numbers of bots suddenly disappear, discussions quickly appear on Reddit, OSRS Discord communities, and YouTube. One explanation is that Jagex has conducted a large-scale bot ban wave, during which thousands of accounts are banned simultaneously to make it more difficult for bot developers to determine how their accounts were detected. Another commonly suggested explanation is Venezuela's recurring nationwide power outages. For years, players have observed what they believe to be substantial reductions in bot activity following prolonged blackouts in Venezuela.This project investigates whether the January 3 power outage, reportedly caused by U.S. strikes on Venezuela's power grid, provides measurable evidence supporting those claims.
+Within the OSRS community, there is a long-standing belief that many of these bots are operated by individuals in Venezuela. Due to the country's economic conditions and the exchange value of OSRS gold relative to the U.S. dollar, botting is often perceived as a viable source of income. Additionally, several well-known RuneScape content creators have produced videos interviewing individuals involved in botting operations or exposing these activities. Whenever large numbers of bots suddenly disappear, discussions quickly emerge on Reddit, in OSRS Discord communities, and on YouTube. One explanation is that Jagex has conducted a large-scale bot ban wave, during which thousands of accounts are banned simultaneously to make it more difficult for bot developers to determine how their accounts were detected. Another commonly suggested explanation is Venezuela's recurring nationwide power outages. For years, players have observed what they believe to be substantial reductions in bot activity following prolonged blackouts in Venezuela.
+
+This project investigates whether the January 3 power outage, reportedly associated with U.S. strikes on Venezuela's power grid, provides measurable evidence supporting these claims.
 
 ## Methods
-To analyze whether there is a statistical difference in bot activity before and after the US bombed the Venezuelan powergrid we looked at buy volume of items and player population before and after. When using the OSRS API to pull item information from the grand exchange we had a lot of options available. We decided to settle on a few import items that are critical for all players and who's base ingredients are likely farmed by bots resulting in price changes if bots disappear. We can break these items into 3 categories: food,potions, and runes. 
 
-All three of these items are generically agreed upon by the community that bots farm these base ingredients and sell them in high numbers or craft and sell those in high numbers. When pulling information from the OSRS GE we can see buy/sell price and volume. With these options, we agreed to focus on changes in buy volume for two reasons. One, real players could be holding vast amounts of these items and notice a increase in price once the number of items available decrease due to bots. That could result in a massive sell off which could skew our results. Second, we're interested in the normal players buying these items and using them, not billionaries with vast funds manipulating the market. As such, regular players would still be required to buy these items regardless of the price because they are critical for a wide variety of game content.Additionally, its unlikely that normal players would have a massive volume of items to sell on immediately. Currently, our analysis looked at cooked and raw lobsters,sharks,anglerfish and our statistical methods focused on the raw version since it is the easiest for the most amount of bots to get.
+To investigate whether bot activity changed after the reported U.S. strikes on Venezuela's power grid, we analyzed item buy volumes and player population before and after January 3, 2026. The OSRS Grand Exchange API provides several types of item data, including prices and trading volumes. We selected several important items that are widely used by players and whose base ingredients are likely farmed by bots. A reduction in bot activity could therefore affect the availability and trading volume of these items. We divided the selected items into three categories: food, potions, and runes.
 
-First, we analyzed the raw and cooked lobsters,sharks,anglerfish buy/sell volume and price over the last year to get an idea of the landscape for these items. After initial analysis and cleaning, we focused on the cooked versions of these items and split them into 1 week before jan 3rd 2026 and one week after jan 3rd include the 3rd. Cooked food was focused for this data analaysis because the difference in cost between cooked and uncooked is small resulting in players buying cooked food to save time and for convience. Each group was test for normalcy and equal variance so that we could run a Two Way ANOVA on the data. Normalcy was tested using QQ-plots,histograms, and a Shapiro-Wilks test. Variance was tested using a Levene's test.  Alongside analyzing those items, we also analyzed the player count under the same time constraint as the previous items. Here we tracked the last year of player counts with using osrsplayercount.com api. Here we used an independent t-test and a Mann-Whitney U test to determine if there was a statically significant difference in player count after we checked for normality and variance.
+The OSRS community generally believes that bots gather the raw ingredients for these items and sell them in large quantities, or craft the ingredients into finished products and sell those products in large quantities. The Grand Exchange API provides buy and sell prices and trading volumes. We focused on buy volume for two reasons. First, real players holding large quantities of these items might respond to a price increase caused by reduced bot activity by selling their holdings. Such a sell-off could skew our results. Second, we wanted to focus on ordinary players purchasing items for gameplay rather than wealthy players with substantial funds who might influence the market. Regular players may still need to purchase these items regardless of price because they are essential for a wide variety of in-game activities. Additionally, ordinary players are unlikely to have large quantities of items readily available to sell immediately in response to market changes.
+
+Our initial analysis examined the prices and buy and sell volumes of raw and cooked lobsters, sharks, and anglerfish over the preceding year to establish a baseline understanding of their market behavior. Following this analysis and data cleaning, we narrowed our event-window analysis to the cooked versions of these items. We selected cooked food because it is useful across a wide range of activities available to players of all levels, and the relatively small price difference between raw and cooked food may encourage players to purchase cooked food for convenience and to save time. We then divided the data into two periods: the week before January 3, 2026, and the week beginning January 3, 2026, with January 3 included in the latter period.
+
+We assessed the assumptions required for a two-way analysis of variance (ANOVA) using Q-Q plots, histograms, the Shapiro–Wilk test, and Levene's test. We used the Shapiro–Wilk test, alongside visual inspection of the distributions, to assess normality, and Levene's test to assess the equality of variances.
+
+Alongside the item analysis, we examined OSRS player population over the same time periods. We obtained player-count data using the API provided by osrsplayercount.com. We then used an independent-samples t-test and a Mann–Whitney U test to determine whether player counts differed significantly between the periods before and after January 3, 2026.
 
 ## DataSets
 
@@ -110,9 +117,11 @@ format timestamps)                      filter selected items)
 
 ### Step 1: Intial Data Exploration
 
-As stated previously, our research aim is determine if there is a statistical difference in bot activity before and after the US bombed the Venezuelan powergrid. To find an answer to that question, we can look at buy and sell volumes and prices as well as player count. To begin, we looked at trends in the data by visualize columns in the data.
+As stated previously, our research aim is to determine whether bot activity differed statistically before and after the reported U.S. bombing of Venezuela’s power grid. To investigate this question, we examined buy and sell volumes and prices, as well as player counts. We began by visualizing the data to identify trends.
 
-First we confirm our full dataframe and its types.
+First we confirmed our full dataframe and its types.
+
+
 ```Python
 fulldf.head()
 ```
@@ -136,9 +145,9 @@ fulldf.info()
 | avg_sell_price | int64       |
 | buy_volume     | int64       |
 | sell_volume    | int64       |
- 
 
-Since the data from .head() and we understand the data types from .describe() we can look at the descriptive statistics of our dataframe for each group to understand the spread of our data
+
+After reviewing the data using `.head()` and examining the data types using `.info()`, we can examine descriptive statistics for each item group to better understand the distribution and spread of our data.
 
 ```Python
 fulldf.groupby(['item_name'])['item_id'].describe()
@@ -163,7 +172,7 @@ fulldf.groupby(['item_name'])['item_id'].describe()
 | Zulrah's scales        |     365 |  12934 |     0 | 12934 | 12934 | 12934 | 12934 | 12934 |
 
 
-After beginning to see the range of our data in a genearl sense, we began seperating the items into item_name groups for analysis. Additionally, since our data uses a timestamp of Year-Month-Day, we additionally made a column called days to help visualize ranges of days before and after the bombing that start at 1 for our initial recording and end 365 days later due to data point restraints
+After gaining a general understanding of the data’s range and distribution, we separated the items into groups based on `item_name` for further analysis. Because our timestamps use the year-month-day format, we also created a column called `days` to make it easier to visualize the timeline relative to the bombing. This column assigns a value of 1 to the first observation and increases sequentially to 365 for the final observation, reflecting the 365-day limit of our dataset.
 
 ```Python
 days = np.arange(1,366,1)
@@ -200,7 +209,7 @@ raw_anglerfishdf.head()
 raw_anglerfishdf.tail()
  ```
 
-The .head() and .tail() of these new dataframes for each food should look similar to what is below.
+The .head() and .tail() outputs for each of these new food dataframes should look similar to the examples below.
 
 ```Python
 lobsterdf.head()
@@ -227,7 +236,7 @@ lobsterdf.tail()
 |     729 |       379 | Lobster     | 2026-06-28  |             129 |              127 |        26736 |         41282 |    365 |
 
 
-After analyzing the data, we are primarily focused on the cooked food. Due to the small difference in value between cooked and uncooked and ease of access for cooked for most players, we will focus primarily on cooked food. Here we plot the buy and sell volumes of cooked shark, lobsters, and anglerfish.
+Based on our initial analysis, we decided to focus primarily on cooked food. The price difference between cooked and raw food is relatively small, and cooked food offers convenience for players participating in a wide range of activities. The plot below shows the buy and sell volumes of cooked lobsters, sharks, and anglerfish.
 
 ```Python
 ax=lobsterdf.plot('timestamp','sell_volume',label='Lobster-SellVol',color='orange',xlim=('2025-12-15','2026-01-31'),linestyle='--')
@@ -250,9 +259,9 @@ plt.title('Buy and Sell Volume of Cooked Food')
 
 ![img](Buy and Sell Volume of Cooked Food.png)
 
-From the above graph, two things are clear. First, its obvious that the buy volumes are almost always greater than the sell volume. Intrinsically this makes sense, players use food for all sorts of content and likely consume more than they use. However, it should be noted that this data only shows that food is bought more than its sold, food could still be held in banks indicating vast stores. Secondly, there is a specific spike in both buy and sell volume at on january 3rd and sixth. There provides some concrete evidence that we are seeing shifts in the market that could possibly be related to the rolling blackouts in venezuela following the bombing of their powergrid.
+The graph above reveals two notable patterns. First, buy volumes are generally higher than sell volumes. This makes sense, as players use food across a wide range of activities and likely consume more than they sell. However, these data only show that more food is bought than sold; players may still hold large quantities of food in their banks. Second, both buy and sell volumes show noticeable spikes on January 3 and January 6. These spikes provide evidence of changes in market activity that could potentially be related to the rolling blackouts in Venezuela following the reported bombing of its power grid.
 
-As a logical check, we see a similar trend when we analyze the buy and sell volume in raw food below.
+As a point of comparison, we observe a similar pattern when examining the buy and sell volumes of raw food, as shown below.
 
 ```Python
 
@@ -276,9 +285,11 @@ plt.title('Buy and Sell Volume of Raw Food')
 
 ![img](Buy and Sell Volume of Raw Food.png)
 
-Interesting enough we notice that when the raw food is analyzed, we see similar spikes at the same dates mentioned. However, here we see that the sell volume is greater than the buy volume for raw shark and anglerfish. It's possible that people were aware noticing a change in market value for these items and were selling off in mass. It's worth mentioning here that the change in buy and sell volumes is still within the same magnitude so that change is not to extreme.
+Interestingly, when we examine raw food, we observe similar spikes on the same dates mentioned above. However, sell volumes exceed buy volumes for raw sharks and anglerfish. One possible explanation is that players noticed changes in the market value of these items and began selling them in large quantities. It is worth noting, however, that buy and sell volumes remain within the same order of magnitude, so the differences are not extreme.
 
-Another interesting thing to note is that despite a change in buy and sell volume around Jan 3rd, the prices of the items and their margins stayed roughly the same. Below is a plot of the buy and sell price for the cooked food which resemblems the same trend in buy and sell price for raw food. However, we dont see a spike in prices around jan 3rd like we do in buy and sell volume.
+Another notable observation from the raw-food buy and sell volume graph is that, despite changes in trading volumes around January 3, the prices and price margins of these items remained relatively stable. Compared with cooked food, raw-food buy and sell volumes also appear to be more stable.
+
+The plot below shows the buy and sell prices of cooked food, which follow trends similar to those observed for raw food. However, unlike trading volumes, prices do not show a clear spike around January 3.
 
 ```Python
 ax=lobsterdf.plot('timestamp','avg_sell_price',label='lobster-SellPrice',color='orange',xlim=('2025-12-15','2026-01-31'),linestyle='--')
@@ -303,9 +314,18 @@ plt.title('Buy and Sell Price of Cooked Food')
 
 ![img](Buy and Sell Price of Cooked Food.png)
 
-Now that we have confirmed our data in our dataframe and analyzed trends in the data, we can move forward with our statistical analysis. We begin by performing a two way anova on our cooked food buy volume by comparing the data a week before jan 3rd and a week after(including jan 3rd). As such our independent variables are the period (before vs after) and food type. Our dependent variable ,in this case, is buy volume since we are interested in that change. Our anova will tell us two main effects from our dependent variables and if there is an interaction between these two main effects. Our first main effect tell us if there is a difference in average buy volume for all items combined before and after jan 3rd. Our second effect tells us if there is a difference in sharks, lobsters, and anglerfish buy volumes regardless of the period it takes place. Finally the interaction between the two effects tells us if jan 3rd has an effect on which item your looking at. For example, did sharks buy volume increase more than lobsters. In general, the interaction tells us whether the change before and after jan 3rd is different for each item.
 
-We begin our two way anova by setting up an event window to only contain data in the date range we're interested in 
+
+
+### Step 2: Buy Volume Two-Way Anova
+
+Now that we have confirmed the structure of our dataframe and examined trends in the data, we can proceed with our statistical analysis. We begin by performing a two-way ANOVA on the buy volumes of cooked food, comparing the week before January 3, 2026, with the week beginning January 3, 2026, including January 3 in the latter period.
+
+Our two independent variables are **period** (before vs. after January 3rd) and **food type** (sharks, lobsters, and anglerfish). Our dependent variable is **buy volume**, as we are interested in how purchasing activity changed between the two periods.
+
+The two-way ANOVA allows us to examine two main effects and the interaction between them. The first main effect tests whether average buy volume across all three food types differs between the week before January 3 and the week beginning January 3. The second main effect tests whether average buy volume differs among sharks, lobsters, and anglerfish, regardless of the period. Finally, the interaction effect tests whether the change in average buy volume between the two periods differs by food type. For example, did the buy volume of sharks increase more than that of lobsters? This interaction helps us determine whether the change in buy volume around January 3 varied among the three foods.
+
+We begin the two-way ANOVA by creating an event window containing only the data within our selected date range.
 
 ```Python 
 food_df = pd.concat([lobsterdf,sharkdf,anglerfishdf],axis=0,ignore_index=True)
@@ -362,7 +382,7 @@ print(summary)
 | Shark       | Before   |       7 |      1.07414e+06 | 454605           |      1.21805e+06 |      1.13876e+06 |      1.28902e+06 |  65808 | 1379553 |
 
 
-#to identify any outlier in our data, we created a boxplot of our food before and after the event.
+To identify potential outliers in our data, we created boxplots comparing food buy volumes before and after the event.
 
 ```Python
 fig,ax = plt.subplots(figsize=(8,6))
@@ -383,9 +403,9 @@ plt.xticks(rotation=45)
 
 ![img](boxplot for event window.png)
 
-The boxplot above shows the various food groups time period vs the buy volume. The green line represents the median for each group and the whiskers are 1.5 the interquartile range from the edge of the box. As in all box plots, outliers are located outside of the whiskers and are up to the analyst to interpret. In this study, we are choosing to retain the outliers due to the small dataset and that likihood that these outliers are revelant to our research question.
+The boxplot above compares buy volumes for each food type before and after the event. The green line represents the median for each group, while the whiskers extend to the most extreme data points within 1.5 times the interquartile range (IQR) of the lower and upper quartiles. Data points beyond the whiskers are considered potential outliers, which must be interpreted in the context of the study. In this analysis, we chose to retain these outliers because our dataset is relatively small and these observations may be relevant to our research question.
 
-After analyzing for any outliers in our new dataframe, we looked to see if there might be any interaction between food type and period in our dataset prior to any anova by looking at the means. The plot below is a plot of average buy volume for each food before and after Jan 3rd. Since the lines are somewhat parallel and within the same scale, we can roughly assume there is no interaction. However, a two way anova is required to prove that.
+After examining potential outliers in our dataframe, we investigated whether there might be an interaction between food type and period before conducting the ANOVA. To do this, we plotted the average buy volume for each food type before and after January 3, as shown below. The lines appear roughly parallel, suggesting that the change in buy volume may be similar across the three food types and that the interaction effect may be small. However, this visual assessment is only preliminary; the two-way ANOVA will allow us to formally test whether the interaction is statistically significant.
 
 ```Python
 # Plotting the interaction means for the three types of food before and after the period.
@@ -424,14 +444,14 @@ plt.show()
 
 ![img](Mean Buy Volume Before and After January 3 2026.png)
 
-Finally, we can now analyze our data using a two way anova. First we fit our data to a linear regression model using ordinary least squares (OLS) method that the statsmodels library can use for an ANOVA. Than we use our OLS model for our linear regression as shown below.
+Finally, we can analyze our data using a two-way ANOVA. First, we fit an ordinary least squares (OLS) regression model using the `statsmodels` library. We then use this model to perform the ANOVA and evaluate the effects of period, food type, and their interaction on buy volume, as shown below.
 
 ```Python
 #ordinary least squares model that fits a linear regressio model
-model = ols('buy_volume ~ C(period) * C(item_name)',data=event_window).fit()
+model_buyvol = ols('buy_volume ~ C(period) * C(item_name)',data=event_window).fit()
 
-twoway_anova = sm.stats.anova_lm(model,type=2)
-print(twoway_anova)
+twoway_anova_buyvol = sm.stats.anova_lm(model,type=2)
+print(twoway_anova_buyvol)
 ```
 
 |                        |   df |      sum_sq |     mean_sq |         F |      PR(>F) |
@@ -441,8 +461,223 @@ print(twoway_anova)
 | C(period):C(item_name) |    2 | 1.50158e+12 | 7.50789e+11 |   1.13325 |   0.333202  |
 | Residual               |   36 | 2.38504e+13 | 6.6251e+11  | nan       | nan         |
 
+Our results provide several important insights. First, the main effect of period is statistically significant, as the p-value is below 0.05. This indicates that there is a statistically significant difference in average buy volume between the week before January 3 and the week beginning January 3. Second, the main effect of item type is also statistically significant, indicating that average buy volume differs among sharks, lobsters, and anglerfish, regardless of the period. This is expected, as these foods serve different purposes in the game and may have different levels of demand. However, this finding is not directly relevant to our primary research question. Finally, the interaction between period and item type is not statistically significant, as its p-value is greater than 0.05. In simpler terms, we do not have sufficient statistical evidence to conclude that the change in average buy volume between the two periods differed among sharks, lobsters, and anglerfish. Although the magnitude or direction of change may vary between items, the differences in those changes were not statistically significant.
+
+To assess whether our model satisfies the assumptions of the ANOVA, we next examined the residuals for normality and equal variance. We began by comparing the mean and median of the model residuals to look for potential skewness. Although this comparison alone cannot establish whether the residuals are normally distributed, a median greater than the mean may suggest left skewness. This could be influenced by the outlier identified earlier, so we proceeded with additional statistical tests to assess normality more rigorously.
+
+```Python
+print(model_buyvol.resid.describe())
+```
+
+|       |                 0 |
+|:------|------------------:|
+| count |      42           |
+| mean  |       2.82723e-10 |
+| std   |  762703           |
+| min   |      -1.73573e+06 |
+| 25%   | -378570           |
+| 50%   |   13713.4         |
+| 75%   |  142556           |
+| max   |       2.74397e+06 |
 
 
+To further assess normality, we performed the Shapiro–Wilk test. The W statistic measures how closely our data follows a normal distribution, with values closer to 1 generally indicating greater consistency with normality. Our results show a p-value below the significance level of \(\alpha = 0.05\), providing statistically significant evidence that the model residuals deviate from a normal distribution. To further investigate this deviation, we created a Q–Q plot to visually compare the distribution of our residuals with a theoretical normal distribution.
 
+```Python
+W_stat,W_p = scipy.stats.shapiro(residuals)
+print("Shapiro-Wilk test statistic: ",W_stat,"P-value: ",W_p)
+
+
+#qq_plot
+scipy.stats.probplot(residuals,dist="norm",plot=plt)
+plt.title("Buy Volume QQ-Plot of ANOVA Residuals")
+plt.show()
+
+```
+
+Shapiro-Wilk test statistic:  0.8652018825164721 P-value:  0.00015274031329211263
+
+![img.png](Buy Volume QQ-Plot of ANOVA Residuals.png)
+
+The Q–Q plot above suggests that our residuals deviate from a normal distribution, particularly in the right tail, where the points diverge from the reference line. However, the Q–Q plot alone makes it difficult to determine the direction and extent of any skewness. To further investigate the distribution of our residuals and assess the apparent deviation from normality, we examined a histogram.
+
+```Python
+#histogram
+plt.hist(residuals,bins=10)
+plt.xlabel("Residuals")
+plt.ylabel("Frequency")
+plt.title("Buy Volume Distribution of ANOVA Residuals")
+plt.show()
+```
+
+![img.png](Buy Volume Distribution of ANOVA Residuals.png)
+
+
+The histogram suggests that our residuals may be left-skewed, although the outlier near 2 appears to influence the distribution. This visual evidence is consistent with the results of the Shapiro–Wilk test and Q–Q plot, which both suggest deviations from normality. However, we must be cautious when interpreting these results for two reasons. First, our sample size is relatively small, consisting of seven days before and seven days after January 3, with one observation for each food type per day. With so few observations, it is difficult to reliably characterize the underlying distribution. Second, our data were collected during an unusual period of Grand Exchange activity, with significant spikes in trading volume. These observations may represent genuine market behavior relevant to our research question. Therefore, rather than removing these observations solely to improve normality, we retained them and proceeded with the ANOVA, acknowledging that the normality assumption may not be fully satisfied. This limitation should be considered when interpreting our results.
+
+After examining normality, we assessed the assumption of equal variance using Levene’s test. In a two-way ANOVA, this assumption means that the residual variance is approximately equal across the groups being compared, including the combinations of food type and period. Because the boxplots alone did not clearly establish whether the variances were similar, we used Levene’s test for a more formal assessment. The test produced a p-value greater than our significance level of \(\alpha = 0.05\). Therefore, we fail to reject the null hypothesis of equal variances. This means that we did not find statistically significant evidence of unequal variances, although it does not prove that the variances are identical.
+
+```Python
+l_stat, l_p = scipy.stats.levene(
+    event_window.loc[event_window.item_name == "Shark","buy_volume"],
+    event_window.loc[event_window.item_name == "Lobster","buy_volume"],
+    event_window.loc[event_window.item_name == "Anglerfish",'buy_volume']
+)
+print("Levene statistic: ",l_stat,"P-value: ",l_p) #p value is >.05 meaning variances are not significantly different so the anova is okay
+
+```
+Levene statistic:  1.6891638211624205 P-value:  0.19790440340896562
+
+
+In conclusion, our two-way ANOVA provided several important insights into cooked-food buy volumes. Our primary objective was to determine whether average buy volume differed between the week before January 3 and the week beginning January 3 for sharks, lobsters, and anglerfish. Our results showed a statistically significant difference in average buy volume between the two periods. Additionally, the interaction effect was not statistically significant, suggesting that the change in buy volume was not significantly different among the three food types.
+
+We then assessed the ANOVA assumptions of normality and equal variance. Levene’s test did not provide statistically significant evidence of unequal variances. However, the Shapiro–Wilk test, Q–Q plot, and histogram suggested that our residuals deviated from normality. Therefore, we cannot confidently conclude that the normality assumption was satisfied, and this limitation should be considered when interpreting our results. This concludes our analysis of cooked-food buy volumes. Next, we will investigate whether player population counts differed before and after January 3.
+
+### Step 3: Analyzsis of Player Population
+
+We began our OSRS player population analysis by retrieving player count data from the OSRS Player Count website using its API. We then divided the data into the same one-week periods before and after January 3 used in our previous analysis. Unlike our Grand Exchange dataset, which recorded observations daily, the player count dataset records observations hourly, providing a larger number of observations for our analysis. The code below shows how we separated the data into these two periods.
+
+```Python
+
+player_numbers = pd.read_sql(
+    """
+    select *,date(timestamp) as `date`
+    from player_count
+    where timestamp between ('2026-01-03' -interval 7 day) and ('2026-01-03' + interval 6 day)
+    """,conn
+)
+
+player_numbers
+#plt.scatter(player_numbers['timestamp'],player_numbers['player_count'])
+
+ax = player_numbers.plot(
+    'timestamp', 'player_count',
+    style='--',
+    ylim=(100000, 260000),
+    title='OSRS Player Population Over Time',
+    xlabel='Date',
+    ylabel='Player Count'
+)
+
+ax.xaxis.set_major_locator(mdates.HourLocator(byhour=0, interval=24))
+ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
+
+plt.show()
+
+prior_date = pd.read_sql(
+    """
+    select *,date(timestamp) as `date`
+    from player_count
+    WHERE timestamp between '2026-01-03' - interval 7 day and '2026-01-02 23:59:59'
+    """,conn
+)
+
+prior_date
+
+after_date = pd.read_sql(
+    """
+    select *,date(timestamp) as `date`
+    from player_count
+    where timestamp between '2026-01-03' and '2026-01-03' + interval 6 day
+    """,conn
+)
+
+after_date
+```
+
+![img!](PlayerPopulation.png)
+
+Based on the player population graph, there does not appear to be a noticeable difference in player counts before and after January 3, despite the changes in Grand Exchange food buy volumes. To investigate this further, we used an independent-samples t-test and a Mann–Whitney U test to determine whether player population differed between the two periods.
+
+Before conducting these tests, we first examined the **normality** of the player population data. Normality is an assumption of the independent-samples t-test, whereas the Mann–Whitney U test does not require the data to follow a normal distribution. Because our player population dataset contains hourly observations, our sample size is greater than 50 in each period. We therefore began by examining histograms and QQ-plots to visually assess the distributions. We also performed the Shapiro–Wilk test to supplement our visual assessment. Although the Shapiro–Wilk test can be used with larger samples, it may detect even small deviations from normality when the sample size is large. By using both visual and statistical assessments, we could better determine whether the data deviated from a normal distribution and whether the Mann–Whitney U test would provide a useful alternative to the t-test.
+
+After examining normality, we assessed the **equal-variance assumption** for the independent-samples t-test. This assumption requires the player counts in the two periods to have approximately equal variances. The following sections present our normality assessments first, followed by our test for equal variance.
+
+```Python
+tl_stat,tl_pvalue = scipy.stats.levene(prior_date.player_count,after_date.player_count)
+print(f'Levene test = {tl_stat:.4f}, P-value = {tl_pvalue:.4f}')
+alpha =.05
+if tl_pvalue < alpha:
+    print("Reject the null hypothesis: Variances are NOT equal.")
+else:
+    print("Fail to reject the null hypothesis: Variances ARE equal.")
+
+#normality check here
+    
+print(f"Before: W statistic = {W_before:.3f}, P-value = {W_before_pvalue:.4f}")
+print(f"After : W statistic= {W_after:.3f}, P-value = {W_after_pvalue:.4f}")
+
+scipy.stats.probplot(prior_date.player_count,dist='norm',plot=plt)
+plt.title("Q-Q Plot: Player Population Before Jan. 3")
+
+scipy.stats.probplot(after_date.player_count,dist='norm',plot=plt)
+plt.title("Q-Q Plot: Player Population After Jan. 3")
+
+
+plt.hist(prior_date.player_count,bins=20)
+plt.title("Player Population Distribution Before Jan. 3")
+plt.xlabel("Player Population")
+plt.ylabel("Frequency")
+
+
+plt.hist(after_date.player_count,bins=20)
+plt.title("Player Population Distribution After Jan. 3")
+plt.xlabel("Player Population")
+plt.ylabel("Frequency")
+
+```
+Levene’s test indicated that we did not find statistically significant evidence of unequal variances between our two groups. We then performed the Shapiro–Wilk test to assess the normality of the player population data. Both the before and after groups returned p-values that rounded to 0.0000, indicating statistically significant evidence that the data in both groups deviate from a normal distribution.
+
+Because our sample sizes exceed 50 in both groups, we also examined Q–Q plots to visually assess normality. The Q–Q plot for the period before January 3 shows deviations from the reference line, suggesting that the data do not follow a normal distribution. To further investigate these deviations, we examined histograms of the player population data for both periods. The histograms, along with the Shapiro–Wilk test and Q–Q plots, suggest that neither group is normally distributed.
+
+Given these results, we decided to use the Mann–Whitney U test as an alternative to the independent-samples t-test. Although the t-test can be robust to moderate deviations from normality, the Mann–Whitney U test does not require normally distributed data. Our Mann–Whitney U test returned a p-value of 0.01368, which is below our significance level of \(\alpha = 0.05\). Therefore, we reject the null hypothesis and conclude that there is a statistically significant difference in player population between the periods before and after January 3.
+
+It is important to note that the Mann–Whitney U test compares the distributions of the two groups; it does not necessarily test for a difference in their means. Additionally, because our observations were recorded hourly, consecutive player counts may be correlated, which could affect the validity of the test’s results.
+
+Levene test statistic = 0.2307, P-value = 0.6314
+
+
+Before: Shapiro-Wilk W statistic = 0.942, P-value = 0.0000
+After : Shapiro-Wilk W statistic = 0.940, P-value = 0.0000
+
+![img.png](QQplot player population before jan3rd.png)
+
+![img.png](QQplot player population after jan3rd.png)
+
+![img.png](Player Population Distribution Before Jan3rd.png)
+![img.png](Player Population Distribution After Jan3rd.png)
+
+```Python
+
+MWU_stat, MWU_pvalue = scipy.stats.mannwhitneyu(prior_date.player_count,after_date.player_count,alternative='two-sided')
+
+print(f"MWU_statistic = {MWU_stat}, MWU_P-value = {MWU_pvalue}")
+```
+MWU_statistic = 10211.0, MWU_P-value = 0.013678399414026276
+
+### Step 4: Analysis Conclusion
+## Conclusion
+
+After analyzing our results, we can draw several conclusions and consider a possible explanation for the changes in OSRS market activity and player population around January 3, 2026. First, our two-way ANOVA examined the buy volumes of three popular food items: sharks, anglerfish, and lobsters. The results showed a statistically significant difference in average buy volume between the week before January 3 and the week beginning January 3. Additionally, our Mann–Whitney U test found a statistically significant difference in player population between the two periods, with a p-value of 0.01368. Taken together, these results indicate that both Grand Exchange trading activity for these food items and player population changed significantly around the same time as the reported rolling blackouts in Venezuela.
+
+It is possible that these changes were caused by reduced access to OSRS for players in Venezuela, as our initial hypothesis suggested. However, we must also consider other possible explanations. In the United States, this period falls between Christmas and the return to work and school after the New Year. It is possible that this seasonal change affected player activity, with people selling food or adjusting their inventories in anticipation of having less time to play. In our opinion, this is less likely, as the player population appeared relatively stable before and after the period we examined. Additionally, we did not identify any other global events or server-related issues that would explain the decrease in player population during this time.
+
+Based on these findings, we believe it is possible that the reported disruptions in Venezuela contributed to the observed changes in OSRS player population and Grand Exchange activity. If a significant number of players in Venezuela lost access to the game, this could explain the decrease in player population. Furthermore, if some of the accounts that disappeared were bots, this could also explain the changes in trading volumes for commonly traded food items.
+
+As such, our results raise the possibility that Venezuelan players make up a significant portion of the OSRS player population and that bots may account for a portion of those players. However, our analysis cannot directly establish the geographic location of affected players or determine how many of them were bots. Further investigation would be needed to confirm this hypothesis and distinguish the effects of regional disruptions from other factors that may have influenced player activity during this period.
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 

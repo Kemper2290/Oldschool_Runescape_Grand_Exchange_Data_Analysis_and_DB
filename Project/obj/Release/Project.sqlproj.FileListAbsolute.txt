@@ -1,1 +1,5 @@
 C:\Users\Kempe\OneDrive\CppProjects\Oldschool Runescape Grand Exchange Data Analysis and DB\Project\bin\Release\Project.dacpac
+C:\Users\Kempe\OneDrive\CppProjects\Oldschool Runescape Grand Exchange Data Analysis and DB\Project\obj\Release\Model.xml
+C:\Users\Kempe\OneDrive\CppProjects\Oldschool Runescape Grand Exchange Data Analysis and DB\Project\obj\Release\refactor.xml
+C:\Users\Kempe\OneDrive\CppProjects\Oldschool Runescape Grand Exchange Data Analysis and DB\Project\obj\Release\postdeploy.sql
+C:\Users\Kempe\OneDrive\CppProjects\Oldschool Runescape Grand Exchange Data Analysis and DB\Project\obj\Release\predeploy.sql

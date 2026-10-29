@@ -30,8 +30,8 @@ query = """
 
 fulldf = pd.read_sql(query,conn)
 #fulldf.to_csv('venezuela_bots_csv',index=False)
-fulldf['spread'] = fulldf['avg_buy_price']-fulldf['avg_sell_price']
-
+fulldf['BuySellSpread'] = fulldf['avg_buy_price']-fulldf['avg_sell_price']
+fulldf['VolSpread'] = fulldf['buy_volume'] - fulldf['sell_volume']
 
 fulldf.head()
 print(fulldf.head().to_markdown(index=False))
@@ -148,7 +148,7 @@ ax.xaxis.set_major_formatter(mdates.DateFormatter('%m-%d')) # Format as Dec 01, 
 plt.xticks(rotation=45)
 
 #-----------------------------------------
-#plotting data for avg buy and sell price for food
+#plotting data for avg buy and sell price for cooked food
 #----------------------------------------
 
 ax=lobsterdf.plot('timestamp','avg_sell_price',label='lobster-SellPrice',color='orange',xlim=('2025-12-15','2026-01-31'),linestyle='--')
@@ -259,7 +259,6 @@ event_window = food_df[
 
 event_window['period'] = 'After'
 event_window.loc[event_window['timestamp'] < event_date,'period'] = 'Before'
-#event_window["spread"] = event_window["avg_buy_price"] - event_window["avg_sell_price"]
 
 
 food_df.head()
@@ -306,8 +305,6 @@ plt.ylabel("Buy Volume")
 plt.xticks(rotation=45)
 
 
-
-
 # Plotting the interaction means for the three types of food before and after the period.
 
 means = (
@@ -339,11 +336,17 @@ plt.ylabel("Mean Buy Volume")
 plt.grid(True)
 plt.show()
 
-#ordinary least squares model that fits a linear regressio model
-model = ols('buy_volume ~ C(period) * C(item_name)',data=event_window).fit()
 
-twoway_anova = sm.stats.anova_lm(model,type=2)
-print(twoway_anova.to_markdown())
+
+#-----------------------------------------------------------------------
+# Analyze the two way anova of buy volume cooked food
+#------------------------------------------------------------------------
+
+#ordinary least squares model that fits a linear regressio model
+model_buyvol = ols('buy_volume ~ C(period) * C(item_name)',data=event_window).fit()
+
+twoway_anova_buyvol = sm.stats.anova_lm(model_buyvol,type=2)
+print(twoway_anova_buyvol.to_markdown())
 
 # This means that there is a difference between in buy_volume between two volumes but since we only have two
 #   categorical variables we dont need to run a post hoc test for this variable. However, since the p-value
@@ -359,13 +362,14 @@ print(twoway_anova.to_markdown())
 
 #checking the residuals from the anova model to check that they are approximately normal
 
-residuals = model.resid
+residuals = model_buyvol.resid
 
-print(type(model.resid))
-print(model.resid.head())
-print(model.resid.describe())
-print(model.resid.median())
-print(residuals.dtype) #since the median >mean the data is right skewed
+print(type(model_buyvol.resid))
+print(model_buyvol.resid.head())
+print(model_buyvol.resid.describe())#since the median >mean the data is possibly left skewed
+print(model_buyvol.resid.describe().to_markdown())
+print(model_buyvol.resid.median())
+print(residuals.dtype)
 print(len(residuals))
 print(residuals.nunique())
 print(residuals.min())
@@ -376,16 +380,19 @@ print(residuals.shape)
 #W stat tels how similar data is to normal distribution,  1 = highly normal,
 # p value  tells statistical significance where  p<.05 means data is not normal
 W_stat,W_p = scipy.stats.shapiro(residuals)
-print(W_stat,W_p)
+print("Shapiro-Wilk test statistic: ",W_stat,"P-value: ",W_p)
+
 
 #qq_plot
 scipy.stats.probplot(residuals,dist="norm",plot=plt)
+plt.title("Buy Volume QQ-Plot of ANOVA Residuals")
 plt.show()
 
+#histogram
 plt.hist(residuals,bins=10)
 plt.xlabel("Residuals")
 plt.ylabel("Frequency")
-plt.title("Distribution of ANOVA Residuals")
+plt.title("Buy Volume Distribution of ANOVA Residuals")
 plt.show()
 
 
@@ -406,13 +413,60 @@ l_stat, l_p = scipy.stats.levene(
     event_window.loc[event_window.item_name == "Lobster","buy_volume"],
     event_window.loc[event_window.item_name == "Anglerfish",'buy_volume']
 )
-print(l_stat,l_p) #p value is >.05 meaning variances are not significantly different so the anova is okay
+print("Levene statistic: ",l_stat,"P-value: ",l_p) #p value is >.05 meaning variances are not significantly different so the anova is okay
 
 
 
 #-----------------------------------------------------------------------
+# Analyze the two way anova of sell volume cooked food
+#------------------------------------------------------------------------
+event_window.head()
+
+#ordinary least squares model that fits a linear regressio model
+model_sellvol = ols('sell_volume ~ C(period) * C(item_name)',data=event_window).fit()
+
+twoway_anova_sellvol = sm.stats.anova_lm(model_sellvol,type=2)
+print(twoway_anova_sellvol.to_markdown())
+
+
+
+
+
+
+
+############################################################################
+#-----------------------------------------------------------------------
 # Analyze the difference in population before and after the bombing
 #------------------------------------------------------------------------
+
+
+player_numbers = pd.read_sql(
+    """
+    select *,date(timestamp) as `date`
+    from player_count
+    where timestamp between ('2026-01-03' -interval 7 day) and ('2026-01-03' + interval 6 day)
+    """,conn
+)
+
+player_numbers
+#plt.scatter(player_numbers['timestamp'],player_numbers['player_count'])
+
+ax = player_numbers.plot(
+    'timestamp', 'player_count',
+    style='--',
+    ylim=(100000, 260000),
+    title='OSRS Player Population Over Time',
+    xlabel='Date',
+    ylabel='Player Count'
+)
+
+ax.xaxis.set_major_locator(mdates.HourLocator(byhour=0, interval=24))
+ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
+
+plt.show()
+
+player_numbers.plot('date','player_count',style='--',ylim=(100000,260000))
+
 
 prior_date = pd.read_sql(
     """
@@ -438,10 +492,12 @@ event_window.head()
 event_window.timestamp.min()
 event_window['timestamp'].max()
 
+# -------------------------------------------------------
 # confirmating that the data is normal and equal variance
+# -------------------------------------------------------
 
 tl_stat,tl_pvalue = scipy.stats.levene(prior_date.player_count,after_date.player_count)
-print(f'tl_stat = {tl_stat:.4f}, tl_pvalue = {tl_pvalue:.4f}')
+print(f'Levene test = {tl_stat:.4f}, P-value = {tl_pvalue:.4f}')
 alpha =.05
 if tl_pvalue < alpha:
     print("Reject the null hypothesis: Variances are NOT equal.")
@@ -451,7 +507,7 @@ else:
 
 t_stat,t_pvalue = scipy.stats.ttest_ind(prior_date['player_count'],after_date['player_count'],equal_var=True) # since pvalue is >.05 , reject null hypothesis and variacnes are equal
 
-print(f"t = {t_stat:.3f}, t_pvalue = {t_pvalue:.4f}")
+print(f"t statistic = {t_stat:.3f}, P-value = {t_pvalue:.4f}")
 
 
 
@@ -460,8 +516,8 @@ print(f"t = {t_stat:.3f}, t_pvalue = {t_pvalue:.4f}")
 W_before,W_before_pvalue = scipy.stats.shapiro(prior_date.player_count)
 W_after,W_after_pvalue = scipy.stats.shapiro(after_date.player_count)
 
-print(f"Before: W = {W_before:.3f}, p = {W_before_pvalue:.4f}")
-print(f"After : W = {W_after:.3f}, p = {W_after_pvalue:.4f}")
+print(f"Before: Shapiro-Wilk W statistic = {W_before:.3f}, P-value = {W_before_pvalue:.4f}")
+print(f"After : Shapiro-Wilk W statistic= {W_after:.3f}, P-value = {W_after_pvalue:.4f}")
 
 scipy.stats.probplot(prior_date.player_count,dist='norm',plot=plt)
 plt.title("Q-Q Plot: Player Population Before Jan. 3")
@@ -471,13 +527,13 @@ plt.title("Q-Q Plot: Player Population After Jan. 3")
 
 
 plt.hist(prior_date.player_count,bins=20)
-plt.title("Player Population Before Jan. 3")
+plt.title("Player Population Distribution Before Jan. 3")
 plt.xlabel("Player Population")
 plt.ylabel("Frequency")
 
 
 plt.hist(after_date.player_count,bins=20)
-plt.title("Player Population After Jan. 3")
+plt.title("Player Population Distribution After Jan. 3")
 plt.xlabel("Player Population")
 plt.ylabel("Frequency")
 
@@ -486,13 +542,89 @@ plt.ylabel("Frequency")
 
 MWU_stat, MWU_pvalue = scipy.stats.mannwhitneyu(prior_date.player_count,after_date.player_count,alternative='two-sided')
 
-print(f"MWU_stat = {MWU_stat}, MWU_pvalue = {MWU_pvalue}")
+print(f"MWU_statistic = {MWU_stat}, MWU_P-value = {MWU_pvalue}")
 #MWU_stat = 10211.0, MWU_pvalue = 0.013678399414026276 the player count between the two dates is significantly different
 
 
 
+#-----------------------------------------------------------------------
+# Anova Analyze the difference in buy and sell price before and after the date
+#------------------------------------------------------------------------
+
+event_window.head()
 
 
 
+model_BuySellSpread = ols('BuySellSpread ~ C(period) * C(item_name)',data=event_window).fit()
+
+twoway_anova_BuySellSpread = sm.stats.anova_lm(model_BuySellSpread,type=2)
+print(twoway_anova_BuySellSpread.to_markdown())
+
+# |                        |   df |    sum_sq |   mean_sq |         F |        PR(>F) |
+# |:-----------------------|-----:|----------:|----------:|----------:|--------------:|
+# | C(period)              |    1 |   88.5952 |   88.5952 |   5.6896  |   0.0224518   |
+# | C(item_name)           |    2 | 5578.9    | 2789.45   | 179.139   |   1.94533e-19 |
+# | C(period):C(item_name) |    2 |   56.3333 |   28.1667 |   1.80887 |   0.178415    |
+# | Residual               |   36 |  560.571  |   15.5714 | nan       | nan           |
+
+# period means there is a difference in buy sell spread before and after.
+#   item_name means there is a difference between spread of each item(expected).
+#   interaction means while there is a difference between period it was not enough
+#   evidence to say that the change was different between the food
+
+#residuals = model_buyvol.resid
+BuySell_residuals = model_BuySellSpread.resid
+
+print(type(BuySell_residuals))
+print(BuySell_residuals.head())
+print(BuySell_residuals.describe())
+print(model_buyvol.resid.median())
+print(residuals.dtype) #since the median >mean the data is right skewed
+print(len(residuals))
+print(residuals.nunique())
+print(residuals.min())
+print(residuals.max())
+print(type(residuals))
+print(residuals.shape)
+
+#W stat tels how similar data is to normal distribution,  1 = highly normal,
+# p value  tells statistical significance where  p<.05 means data is not normal
+W_stat,W_p = scipy.stats.shapiro(residuals)
+print(W_stat,W_p)
+
+#qq_plot
+scipy.stats.probplot(residuals,dist="norm",plot=plt)
+plt.show()
+
+plt.hist(residuals,bins=10)
+plt.xlabel("Residuals")
+plt.ylabel("Frequency")
+plt.title("Distribution of ANOVA Residuals")
+plt.show()
+
+#-----------------------------------------------------------------------
+# Anova Analyze the difference in buy and sell volume before and after the date
+#------------------------------------------------------------------------
+
+event_window.head()
+
+
+
+model_VolSpread = ols('VolSpread ~ C(period) * C(item_name)',data=event_window).fit()
+
+twoway_anova_VolSpread = sm.stats.anova_lm(model_VolSpread,type=2)
+print(twoway_anova_VolSpread.to_markdown())
+
+# |                        |   df |      sum_sq |     mean_sq |         F |        PR(>F) |
+# |:-----------------------|-----:|------------:|------------:|----------:|--------------:|
+# | C(period)              |    1 | 1.18067e+12 | 1.18067e+12 |   5.10655 |   0.0299838   |
+# | C(item_name)           |    2 | 4.70518e+12 | 2.35259e+12 |  10.1753  |   0.000314247 |
+# | C(period):C(item_name) |    2 | 9.83262e+11 | 4.91631e+11 |   2.12637 |   0.134006    |
+# | Residual               |   36 | 8.32342e+12 | 2.31206e+11 | nan       | nan           |
+
+#the period means a significant difference in buy sell volume before and after. item_name means
+#   theres a difference in buy-sell volume difference between items( expected). and interaction
+#   means although the volume spread changed overall between two periods, not enough evidence to
+#   differenct for significantly different for foods
 
 

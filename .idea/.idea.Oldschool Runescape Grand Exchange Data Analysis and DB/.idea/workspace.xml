@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakeProjectFlavorService">
+    <option name="flavorId" value="CMakePlainProjectFlavor" />
+  </component>
+  <component name="CMakeSettings">
+    <configurations />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dfa244b9-7574-42ed-8e53-72e2e9906afd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Project/Venezuela's Powergrid/bckup_README_Analysis.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/Venezuela's Powergrid/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/Venezuela's Powergrid/img_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/Venezuela's Powergrid/yt-dlp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Oldschool Runescape Grand Exchange Data Analysis and DB/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Oldschool Runescape Grand Exchange Data Analysis and DB/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Oldschool Runescape Grand Exchange Data Analysis and DB/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Oldschool Runescape Grand Exchange Data Analysis and DB/.idea/data_source_mapping.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Oldschool Runescape Grand Exchange Data Analysis and DB/.idea/db-forest-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Oldschool Runescape Grand Exchange Data Analysis and DB/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Oldschool Runescape Grand Exchange Data Analysis and DB/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Oldschool Runescape Grand Exchange Data Analysis and DB/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Oldschool Runescape Grand Exchange Data Analysis and DB/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Oldschool Runescape Grand Exchange Data Analysis and DB/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Oldschool Runescape Grand Exchange Data Analysis and DB/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Oldschool Runescape Grand Exchange Data Analysis and DB/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/Project.sqlproj" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project.sqlproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/Venezuela's Powergrid/Analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Venezuela's Powergrid/Analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/Venezuela's Powergrid/README_Analysis.md" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Venezuela's Powergrid/README_Analysis.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/bin/Release/Project.dacpac" beforeDir="false" afterPath="$PROJECT_DIR$/Project/bin/Release/Project.dacpac" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/obj/Project.sqlproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Project/obj/Project.sqlproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/obj/Release/Project.sqlproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Project/obj/Release/Project.sqlproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Project/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Project/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Project/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Project/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Project/obj/rider.project.restore.info" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseLocalColorSettings">
+    <colors>
+      <entry key="fa5ab872-ad1d-42e9-bab3-ff981757622e" value="" />
+    </colors>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Kemper2290&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Kemper2290/Oldschool_Runescape_Grand_Exchange_Data_Analysis_and_DB.git&quot;,
+    &quot;accountId&quot;: &quot;31fa2f19-9d47-441e-b462-a89419934fcf&quot;
+  }
+}</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0000000003866232" />
+      <entry key="S30" value="1.0017417420617718" />
+      <entry key="S60" value="1.1017543599327524" />
+      <entry key="M2" value="1.920471443783417" />
+      <entry key="M5" value="5.054347343410158" />
+      <entry key="M10" value="8.415003577498252" />
+      <entry key="M15" value="11.060213655662249" />
+      <entry key="M30" value="23.589515685301976" />
+      <entry key="H1" value="62.5326891462225" />
+      <entry key="H2" value="128.43206785449024" />
+      <entry key="H4" value="195.5807104888705" />
+      <entry key="D1" value="549.3539824623792" />
+      <entry key="W1" value="1507.413470913676" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="0.0" />
+      <entry key="M5" value="8.253333085107593E-268" />
+      <entry key="M10" value="2.899025500558885E-134" />
+      <entry key="M15" value="9.790215835085048E-90" />
+      <entry key="M30" value="3.703228386792854E-45" />
+      <entry key="H1" value="8.065075340014814E-23" />
+      <entry key="H2" value="1.2470023256304309E-11" />
+      <entry key="H4" value="4.970440400869285E-6" />
+      <entry key="D1" value="0.2326142213917451" />
+      <entry key="W1" value="1.4707474820478288" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.9265880618903709" />
+      <entry key="MS500" value="0.9848664428955506" />
+      <entry key="S2" value="0.9961949481330542" />
+      <entry key="S5" value="0.9984762383082793" />
+      <entry key="S10" value="0.9992378290879548" />
+      <entry key="S30" value="1.0014866966933147" />
+      <entry key="S60" value="1.1015797198422745" />
+      <entry key="M2" value="1.9201398514852765" />
+      <entry key="M5" value="5.053800192574728" />
+      <entry key="M10" value="8.414503652144164" />
+      <entry key="M15" value="11.059674749118782" />
+      <entry key="M30" value="23.587595602588028" />
+      <entry key="H1" value="62.52811174400238" />
+      <entry key="H2" value="128.4267268682418" />
+      <entry key="H4" value="195.57657706033845" />
+      <entry key="D1" value="549.5855486025032" />
+      <entry key="W1" value="1508.8840327304567" />
+    </decayedShown>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="3HbSyJrFlWILoGloKMIHZmH5up7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.Analysis.executor": "Run",
+    "Python.yt-dlp.executor": "Run",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cidr.known.project.marker": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "master",
+    "settings.editor.selected.configurable": "PyConsoleConfigurable.Python Console"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="rider.module" sdk-home="$PROJECT_DIR$/Project/.venv/Scripts/python.exe">
+        <option name="mySdkHome" value="$PROJECT_DIR$/Project/.venv/Scripts/python.exe" />
+        <option name="myModuleName" value="rider.module" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Analysis" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="rider.module" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Project/Venezuela's Powergrid" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Project/Venezuela's Powergrid/Analysis.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.Analysis" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dfa244b9-7574-42ed-8e53-72e2e9906afd" name="Changes" comment="" />
+      <created>1786135528617</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1786135528617</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

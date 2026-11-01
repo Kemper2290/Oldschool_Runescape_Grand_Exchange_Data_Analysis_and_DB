@@ -257,7 +257,7 @@ plt.title('Buy and Sell Volume of Cooked Food')
 ```
 
 
-![img](Buy and Sell Volume of Cooked Food.png)
+![img](BuyandSellVolumeofCookedFood.png)
 
 The graph above reveals two notable patterns. First, buy volumes are generally higher than sell volumes. This makes sense, as players use food across a wide range of activities and likely consume more than they sell. However, these data only show that more food is bought than sold; players may still hold large quantities of food in their banks. Second, both buy and sell volumes show noticeable spikes on January 3 and January 6. These spikes provide evidence of changes in market activity that could potentially be related to the rolling blackouts in Venezuela following the reported bombing of its power grid.
 
@@ -283,7 +283,7 @@ plt.title('Buy and Sell Volume of Raw Food')
 ```
 
 
-![img](Buy and Sell Volume of Raw Food.png)
+![img](BuyandSellVolumeofRawFood.png)
 
 Interestingly, when we examine raw food, we observe similar spikes on the same dates mentioned above. However, sell volumes exceed buy volumes for raw sharks and anglerfish. One possible explanation is that players noticed changes in the market value of these items and began selling them in large quantities. It is worth noting, however, that buy and sell volumes remain within the same order of magnitude, so the differences are not extreme.
 
@@ -312,7 +312,7 @@ plt.title('Buy and Sell Price of Cooked Food')
 ```
 
 
-![img](Buy and Sell Price of Cooked Food.png)
+![img](BuyandSellPriceofCookedFood.png)
 
 
 
@@ -401,7 +401,7 @@ plt.xticks(rotation=45)
 ```
 
 
-![img](boxplot for event window.png)
+![img](boxplotforeventwindow.png)
 
 The boxplot above compares buy volumes for each food type before and after the event. The green line represents the median for each group, while the whiskers extend to the most extreme data points within 1.5 times the interquartile range (IQR) of the lower and upper quartiles. Data points beyond the whiskers are considered potential outliers, which must be interpreted in the context of the study. In this analysis, we chose to retain these outliers because our dataset is relatively small and these observations may be relevant to our research question.
 
@@ -442,7 +442,7 @@ plt.show()
 
 
 
-![img](Mean Buy Volume Before and After January 3 2026.png)
+![img](MeanBuyVolumeBeforeandAfterJanuary32026.png)
 
 Finally, we can analyze our data using a two-way ANOVA. First, we fit an ordinary least squares (OLS) regression model using the `statsmodels` library. We then use this model to perform the ANOVA and evaluate the effects of period, food type, and their interaction on buy volume, as shown below.
 
@@ -497,7 +497,7 @@ plt.show()
 
 Shapiro-Wilk test statistic:  0.8652018825164721 P-value:  0.00015274031329211263
 
-![img.png](Buy Volume QQ-Plot of ANOVA Residuals.png)
+![img.png](BuyVolumeQQ-PlotofANOVAResiduals.png)
 
 The Q–Q plot above suggests that our residuals deviate from a normal distribution, particularly in the right tail, where the points diverge from the reference line. However, the Q–Q plot alone makes it difficult to determine the direction and extent of any skewness. To further investigate the distribution of our residuals and assess the apparent deviation from normality, we examined a histogram.
 
@@ -510,7 +510,7 @@ plt.title("Buy Volume Distribution of ANOVA Residuals")
 plt.show()
 ```
 
-![img.png](Buy Volume Distribution of ANOVA Residuals.png)
+![img.png](BuyVolumeDistributionofANOVAResiduals.png)
 
 
 The histogram suggests that our residuals may be left-skewed, although the outlier near 2 appears to influence the distribution. This visual evidence is consistent with the results of the Shapiro–Wilk test and Q–Q plot, which both suggest deviations from normality. However, we must be cautious when interpreting these results for two reasons. First, our sample size is relatively small, consisting of seven days before and seven days after January 3, with one observation for each food type per day. With so few observations, it is difficult to reliably characterize the underlying distribution. Second, our data were collected during an unusual period of Grand Exchange activity, with significant spikes in trading volume. These observations may represent genuine market behavior relevant to our research question. Therefore, rather than removing these observations solely to improve normality, we retained them and proceeded with the ANOVA, acknowledging that the normality assumption may not be fully satisfied. This limitation should be considered when interpreting our results.
@@ -640,12 +640,12 @@ Levene test statistic = 0.2307, P-value = 0.6314
 Before: Shapiro-Wilk W statistic = 0.942, P-value = 0.0000
 After : Shapiro-Wilk W statistic = 0.940, P-value = 0.0000
 
-![img.png](QQplot player population before jan3rd.png)
+![img.png](QQplotplayerpopulationbeforejan3rd.png)
 
-![img.png](QQplot player population after jan3rd.png)
+![img.png](QQplotplayerpopulationafterjan3rd.png)
 
-![img.png](Player Population Distribution Before Jan3rd.png)
-![img.png](Player Population Distribution After Jan3rd.png)
+![img.png](PlayerPopulationDistributionBeforeJan3rd.png)
+![img.png](PlayerPopulationDistributionAfterJan3rd.png)
 
 ```Python
 

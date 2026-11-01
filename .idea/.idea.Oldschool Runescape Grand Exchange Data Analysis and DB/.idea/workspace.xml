@@ -11,29 +11,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfa244b9-7574-42ed-8e53-72e2e9906afd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Project/Venezuela's Powergrid/bckup_README_Analysis.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/Venezuela's Powergrid/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/Venezuela's Powergrid/img_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/Venezuela's Powergrid/yt-dlp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Oldschool Runescape Grand Exchange Data Analysis and DB/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Oldschool Runescape Grand Exchange Data Analysis and DB/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Oldschool Runescape Grand Exchange Data Analysis and DB/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Oldschool Runescape Grand Exchange Data Analysis and DB/.idea/data_source_mapping.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Oldschool Runescape Grand Exchange Data Analysis and DB/.idea/db-forest-config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Oldschool Runescape Grand Exchange Data Analysis and DB/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Oldschool Runescape Grand Exchange Data Analysis and DB/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Oldschool Runescape Grand Exchange Data Analysis and DB/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Oldschool Runescape Grand Exchange Data Analysis and DB/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Oldschool Runescape Grand Exchange Data Analysis and DB/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Oldschool Runescape Grand Exchange Data Analysis and DB/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Oldschool Runescape Grand Exchange Data Analysis and DB/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Oldschool Runescape Grand Exchange Data Analysis and DB/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Oldschool Runescape Grand Exchange Data Analysis and DB/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/Project.sqlproj" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project.sqlproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Venezuela's Powergrid/Analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Venezuela's Powergrid/Analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/Venezuela's Powergrid/Buy Volume Distribution of ANOVA Residuals.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/Venezuela's Powergrid/Buy Volume QQ-Plot of ANOVA Residuals.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/Venezuela's Powergrid/Buy and Sell Price of Cooked Food.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/Venezuela's Powergrid/Buy and Sell Volume of Cooked Food.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/Venezuela's Powergrid/Buy and Sell Volume of Raw Food.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/Venezuela's Powergrid/Mean Buy Volume Before and After January 3 2026.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/Venezuela's Powergrid/Player Population Distribution After Jan3rd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/Venezuela's Powergrid/Player Population Distribution Before Jan3rd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/Venezuela's Powergrid/QQplot player population after jan3rd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/Venezuela's Powergrid/QQplot player population before jan3rd.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/Venezuela's Powergrid/README_Analysis.md" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Venezuela's Powergrid/README_Analysis.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/bin/Release/Project.dacpac" beforeDir="false" afterPath="$PROJECT_DIR$/Project/bin/Release/Project.dacpac" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/obj/Project.sqlproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Project/obj/Project.sqlproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/obj/Release/Project.sqlproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Project/obj/Release/Project.sqlproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Project/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Project/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Project/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Project/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Project/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/Venezuela's Powergrid/boxplot for event window.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,23 +58,23 @@
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0000000003866232" />
-      <entry key="S30" value="1.0017417420617718" />
-      <entry key="S60" value="1.1017543599327524" />
-      <entry key="M2" value="1.920471443783417" />
-      <entry key="M5" value="5.054347343410158" />
-      <entry key="M10" value="8.415003577498252" />
-      <entry key="M15" value="11.060213655662249" />
-      <entry key="M30" value="23.589515685301976" />
-      <entry key="H1" value="62.5326891462225" />
-      <entry key="H2" value="128.43206785449024" />
-      <entry key="H4" value="195.5807104888705" />
-      <entry key="D1" value="549.3539824623792" />
-      <entry key="W1" value="1507.413470913676" />
+      <entry key="MS100" value="1.0265177431125674" />
+      <entry key="MS500" value="1.9251420741255818" />
+      <entry key="S2" value="4.905038506284384" />
+      <entry key="S5" value="9.214324462221096" />
+      <entry key="S10" value="13.537509716173426" />
+      <entry key="S30" value="18.95565030727647" />
+      <entry key="S60" value="20.97131312832257" />
+      <entry key="M2" value="22.576339533903646" />
+      <entry key="M5" value="25.92247873730241" />
+      <entry key="M10" value="29.652801470819423" />
+      <entry key="M15" value="32.52009111528356" />
+      <entry key="M30" value="44.985422787373075" />
+      <entry key="H1" value="83.43688571722193" />
+      <entry key="H2" value="149.28268696715384" />
+      <entry key="H4" value="216.94244406056112" />
+      <entry key="D1" value="571.5873235772576" />
+      <entry key="W1" value="1530.1131688464038" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -94,34 +85,34 @@
       <entry key="S30" value="0.0" />
       <entry key="S60" value="0.0" />
       <entry key="M2" value="0.0" />
-      <entry key="M5" value="8.253333085107593E-268" />
-      <entry key="M10" value="2.899025500558885E-134" />
-      <entry key="M15" value="9.790215835085048E-90" />
-      <entry key="M30" value="3.703228386792854E-45" />
-      <entry key="H1" value="8.065075340014814E-23" />
-      <entry key="H2" value="1.2470023256304309E-11" />
-      <entry key="H4" value="4.970440400869285E-6" />
-      <entry key="D1" value="0.2326142213917451" />
-      <entry key="W1" value="1.4707474820478288" />
+      <entry key="M5" value="5.524907071384473E-268" />
+      <entry key="M10" value="2.3719189130484653E-134" />
+      <entry key="M15" value="8.564278890347201E-90" />
+      <entry key="M30" value="3.463616216656251E-45" />
+      <entry key="H1" value="7.79979273842567E-23" />
+      <entry key="H2" value="1.226322171699614E-11" />
+      <entry key="H4" value="4.929053466913402E-6" />
+      <entry key="D1" value="0.23229028090924977" />
+      <entry key="W1" value="1.4704547108277468" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9265880618903709" />
-      <entry key="MS500" value="0.9848664428955506" />
-      <entry key="S2" value="0.9961949481330542" />
-      <entry key="S5" value="0.9984762383082793" />
-      <entry key="S10" value="0.9992378290879548" />
-      <entry key="S30" value="1.0014866966933147" />
-      <entry key="S60" value="1.1015797198422745" />
-      <entry key="M2" value="1.9201398514852765" />
-      <entry key="M5" value="5.053800192574728" />
-      <entry key="M10" value="8.414503652144164" />
-      <entry key="M15" value="11.059674749118782" />
-      <entry key="M30" value="23.587595602588028" />
-      <entry key="H1" value="62.52811174400238" />
-      <entry key="H2" value="128.4267268682418" />
-      <entry key="H4" value="195.57657706033845" />
-      <entry key="D1" value="549.5855486025032" />
-      <entry key="W1" value="1508.8840327304567" />
+      <entry key="MS100" value="0.9850567311229962" />
+      <entry key="MS500" value="1.911657264665272" />
+      <entry key="S2" value="4.843656189051798" />
+      <entry key="S5" value="9.083972972033612" />
+      <entry key="S10" value="13.420514829049907" />
+      <entry key="S30" value="18.897724133418954" />
+      <entry key="S60" value="20.939297331881058" />
+      <entry key="M2" value="22.55940375340588" />
+      <entry key="M5" value="25.915182254950725" />
+      <entry key="M10" value="29.648892544128454" />
+      <entry key="M15" value="32.517278640285824" />
+      <entry key="M30" value="44.982452509822366" />
+      <entry key="H1" value="83.43187068391813" />
+      <entry key="H2" value="149.27714021296114" />
+      <entry key="H4" value="216.93819781704133" />
+      <entry key="D1" value="571.8185426892072" />
+      <entry key="W1" value="1531.5834344219627" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -222,6 +213,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Finished writing and grammar checking the readme_analysis.md and made it more readable and flow better" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished writing and grammar checking the readme_analysis.md and made it more readable and flow better" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
